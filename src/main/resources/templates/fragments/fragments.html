@@ -1,0 +1,20 @@
+<header th:fragment="headerNavBar">
+    <nav id="navBar">
+        <a id="navLogo" class="navItem" th:href="@{/}"><img class="icon" id="navLogoLogo" src="/img/svg/academy-logo.svg"></img><img id="navLogoHome" src="/img/svg/home.svg"></img>Academy</a>
+        <button id="navToggler">
+            <img src="/img/svg/hamburguer.svg" alt="">
+        </button>
+        <div id="navItems">
+            <a class="navItem" th:href="@{/}">Home</a>
+            <a class="navItem" th:href="@{/cadastration}">Register</a>
+            <a class="navItem" th:href="@{/studentList}">Search</a>
+            <a class="navItem">Exit</a>
+        </div>
+    </nav>
+</header>
+
+<footer th:fragment="footerBar">
+    <p>&nbsp;</p>
+    <p><a href="https://github.com/edjunior46/Academy-Project" target="_blank"><img src="/img/svg/github.svg" alt="">&nbsp;Go to project repository</a>&nbsp;| Developed by edjunior46</p>
+    <p>Background: Photo by&nbsp;<a href="https://unsplash.com/@miguel_photo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Miguel Henriques</a>&nbsp;on&nbsp;<a href="https://unsplash.com/photos/-8atMWER8bI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>
+</footer>

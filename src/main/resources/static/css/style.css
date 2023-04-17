@@ -1,0 +1,341 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+
+:root {
+    --white: #FAFAFA;
+    --green: #00E676;
+    --red: #FF3D00;
+    --black: #212121;
+    --dark-glass: #2121219a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-image: url("/img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#navBar {
+    margin-top: 10px;
+    padding: 15px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+#navLogo {
+    max-height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+#navLogo img {
+    margin-right: 5px;
+    width: 20px;
+    transition: 0.3s;
+}
+
+#navLogoHome {
+    position: absolute;
+    opacity: 0;
+}
+
+#navLogo:hover {
+    background-color: var(--green);
+    color: var(--white);
+    cursor: pointer;
+}
+
+#navLogo:hover img {
+    transform: rotate(-360deg);
+    filter: invert();
+}
+
+#navLogo:hover #navLogoHome {
+    opacity: 1;
+}
+
+#navLogo:hover #navLogoLogo {
+    opacity: 0;
+}
+
+#navToggler {
+    /* RESPONSIVIDADE
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+    */
+    display: none;
+}
+
+#navToggler img{
+    width: 30px;
+}
+
+#navItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navItem {
+    margin: 0 5px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--black);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navItem:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.navItem:last-of-type:hover {
+    background-color: var(--red);
+}
+
+footer {
+    height: 50px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: fixed;
+    top: 100%;
+    transform: translateY(-100%);
+    font-size: .8rem;
+    background-color: var(--green);
+}
+
+footer a,
+footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--black);
+    transition: 0.3s;
+}
+
+footer img {
+    width: 20px;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+footer a:hover img {
+    filter: invert();
+}
+
+.container {
+    padding: 15vh 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+}
+
+.containerTitle{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.containerSubtitle {
+    font-size: 2rem;
+    color: var(--green);
+}
+
+.containerBtn {
+    margin-top: 120px;
+}
+
+.containerBtn a {
+    margin: 0 20px;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid var(--green);
+    transition: 0.3s;
+    background-color: var(--dark-glass);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.containerBtn a:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+#cadastrationForm, #editForm  {
+    margin-top: 20px;
+    padding: 20px;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-glass);
+    border-radius: 20px;
+    border: 1px solid var(--green);
+}
+
+label {
+    color: var(--green);
+}
+
+#cadastrationForm input, #editForm  input,
+#cadastrationForm select, #editForm  select {
+    margin: 5px 0 15px 0; 
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+#cadastrationForm p, #editForm  p {
+    font-family: sans-serif;
+    font-size: .9rem;
+    text-align: justify;
+}
+
+#cadastrationForm button[type="submit"], 
+#editForm  button[type="submit"] {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    padding: 10px;
+    width: 50%;
+    background-color: var(--green);
+    color: var(--white);
+    border: 2px solid var(--green);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+table {
+    margin-top: 20px;
+    padding: 20px;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-glass);
+    border-radius: 10px;
+    border: 1px solid var(--white);
+    overflow-y: scroll;
+}
+
+table::-webkit-scrollbar {
+    background-color: none;
+    border-radius: 10px;
+}
+
+table::-webkit-scrollbar-thumb {
+    background-color: var(--green);
+    border-radius: 10px;
+}
+
+table thead {
+    margin-bottom: 10px;
+    color: var(--green);
+}
+
+table thead tr,
+table tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr .3fr .3fr;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+table tbody tr {
+    padding: 10px 0;
+}
+
+table tbody tr:hover {
+    background-color: #8d8d8d4b;
+}
+
+table tbody tr a img {
+    height: 15px;
+    filter: invert();
+}
+
+#searchForm {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+#searchForm input[type="search"] {
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: 0.3s;
+}
+
+#searchForm input[type="search"]:focus {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--green);
+}
+
+#searchForm input[type="search"]:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+#searchForm input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#searchForm input[type="submit"]:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+input[type=search]::-ms-clear { 
+    display: none; 
+    width : 0; 
+    height: 0; 
+}
+
+input[type=search]::-ms-reveal { 
+    display: none; 
+    width : 0; 
+    height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { 
+    display: none; 
+}

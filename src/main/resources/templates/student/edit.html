@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy | Edit</title>
+    <meta name="author" content="Ederson Junior">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/svg/academy-logo.svg" type="image/x-icon">
+</head>
+<body>
+    <div th:replace="fragments/fragments :: headerNavBar"></div>
+    <div class="container">
+        <span class="containerTitle">Edit</span>
+        <form id="editForm" method="post" action="/edit" th:object="${student}" autocomplete="off">
+            <input type="hidden" th:field="*{id}">
+            <label for="formName">FULL NAME</label>
+            <input type="text" placeholder="Name" th:field="*{name}" id="formName" required>
+            <label for="formCourse">COURSE</label>
+            <select id="formCourse" th:field="*{course}">
+                <option th:each="course : ${T(br.com.academy.enums.Course).values()}" th:value="${course}" th:text="${course}"></option>
+            </select>
+            <label for="formPeriod">STUDY PERIOD</label>
+            <select id="formPeriod" th:field="*{period}">
+                <option th:each="period : ${T(br.com.academy.enums.Period).values()}" th:value="${period}" th:text="${period}"></option>
+            </select>
+            <label for="formStatus">STUDY STATUS</label>
+            <select id="formStatus" th:field="*{status}">
+                <option th:each="status : ${T(br.com.academy.enums.Status).values()}" th:value="${status}" th:text="${status}"></option>
+            </select>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+    <div th:replace="fragments/fragments :: footerBar"></div>
+    <script scr="/webjars/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

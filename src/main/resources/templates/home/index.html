@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy | Home</title>
+    <meta name="author" content="Ederson Junior">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/svg/academy-logo.svg" type="image/x-icon">
+</head>
+<body>
+    <div th:replace="/fragments/fragments :: headerNavBar"></div>
+    <div class="container">
+        <span class="containerTitle">Academy</span>
+        <span class="containerSubtitle">Registering and Query students</span>
+        <div class="containerBtn">
+            <a th:href="@{/cadastration}">Register</a>
+            <a th:href="@{/studentList}">Search</a>
+        </div>
+    </div>
+    <div th:replace="/fragments/fragments :: footerBar"></div>
+    <script scr="/webjars/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

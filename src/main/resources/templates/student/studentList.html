@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy | Students List</title>
+    <meta name="author" content="Ederson Junior">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/svg/academy-logo.svg" type="image/x-icon">
+</head>
+<body>
+    <div th:replace="fragments/fragments :: headerNavBar"></div>
+    <div class="container">
+        <span class="containerTitle">Students List</span>
+        <form id="searchForm" action="/search" method="get">
+            <input type="search" name="searchName" id="searchName">
+            <input type="submit" value="Search">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">NAME</th>
+                    <th scope="col">COURSE</th>
+                    <th scope="col">PERIOD</th>
+                    <th scope="col">STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" th:each="student : ${students}">
+                    <td th:text="${student.name}"></td>
+                    <td th:text="${student.course}"></td>
+                    <td th:text="${student.period}"></td>
+                    <td th:text="${student.status}"></td>
+                    <td><a th:href="@{edit/{id}(id=${student.id})}"><img src="/img/svg/edit.svg" alt=""></a></td>
+                    <td><a th:href="@{delete/{id}(id=${student.id})}"><img src="/img/svg/delete.svg" alt=""></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/fragments :: footerBar"></div>
+    <script scr="/webjars/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
